@@ -23,7 +23,11 @@ pipeline {
 
         stage('Run NGINX Container') {
             steps {
-                sh 'docker run -d -p 8081:80 --name nginx-container -v $(pwd)/nginx/default.conf:/etc/nginx/conf.d/default.conf nginx || true'
+                sh '''
+                docker run -d -p 8081:80 --name nginx-container \
+                -v $(pwd)/nginx:/etc/nginx/conf.d \
+                nginx || true
+                '''
             }
         }
 
