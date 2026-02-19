@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/BangerAtifAhmed/CC_LAB-6.git'
+                git branch: 'main', url: 'https://github.com/BangerAtifAhmed/CC_LAB-6.git'
             }
         }
 
